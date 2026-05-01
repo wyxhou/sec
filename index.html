@@ -262,6 +262,35 @@
   .functions-box li::before { content: '▸'; position: absolute; left: 0; color: #ff6060; }
   .functions-box li strong { color: var(--text); }
 
+  .viz-panel { background: var(--surface2); border: 1px solid var(--border); border-radius: 12px; padding: 14px 16px; margin: 14px 0; }
+  .viz-title { font-size: 0.64rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent2); margin-bottom: 10px; }
+  .viz-muted { font-size: 0.76rem; color: var(--text-muted); margin-top: 8px; }
+
+  .sieve-flow { display: grid; grid-template-columns: 1fr auto 1fr auto 1fr; gap: 8px; align-items: center; }
+  .sieve-node { background: var(--surface3); border: 1px solid var(--border-bright); border-radius: 10px; padding: 10px; min-height: 86px; }
+  .sieve-node h5 { font-size: 0.68rem; color: var(--text); margin-bottom: 4px; letter-spacing: 0.03em; }
+  .sieve-node p { font-size: 0.74rem; color: var(--text-muted); line-height: 1.45; }
+  .sieve-node.personal { border-color: color-mix(in srgb, var(--accent4) 45%, transparent); }
+  .sieve-node.market { border-color: color-mix(in srgb, var(--accent2) 45%, transparent); }
+  .sieve-node.industry { border-color: color-mix(in srgb, var(--accent) 45%, transparent); }
+  .sieve-arrow { color: var(--text-dim); font-size: 1.05rem; text-align: center; }
+  .diagram-box { background: var(--surface); border: 1px solid var(--border-bright); border-radius: 10px; padding: 10px; margin-top: 10px; overflow-x: auto; }
+  .diagram-box svg { min-width: 680px; width: 100%; height: 170px; display: block; }
+  .diagram-box text { font-family: 'DM Sans', sans-serif; fill: var(--text); }
+  .diagram-caption { font-size: 0.73rem; color: var(--text-muted); margin-top: 8px; }
+
+  .tail-visual { background: var(--surface2); border: 1px solid var(--border); border-radius: 12px; padding: 14px; margin: 10px 0 14px; }
+  .tail-track { display: grid; grid-template-columns: repeat(10, 1fr); gap: 4px; align-items: end; height: 70px; margin: 8px 0; }
+  .tail-bar { border-radius: 4px 4px 0 0; background: linear-gradient(180deg, color-mix(in srgb, var(--accent2) 55%, transparent), color-mix(in srgb, var(--accent2) 20%, transparent)); border: 1px solid color-mix(in srgb, var(--accent2) 45%, transparent); border-bottom: none; }
+  .tail-head { background: linear-gradient(180deg, color-mix(in srgb, var(--accent3) 55%, transparent), color-mix(in srgb, var(--accent3) 20%, transparent)); border-color: color-mix(in srgb, var(--accent3) 45%, transparent); }
+  .tail-labels { display: flex; justify-content: space-between; gap: 8px; font-size: 0.72rem; color: var(--text-muted); }
+  .tail-labels strong { color: var(--text); }
+
+  .formula-compare { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin: 12px 0; }
+  .formula-chip { background: var(--surface2); border: 1px solid var(--border); border-radius: 10px; padding: 10px; }
+  .formula-chip .f-label { font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 5px; font-weight: 700; }
+  .formula-chip .f-eq { font-family: 'DM Mono', monospace; font-size: 0.72rem; color: var(--accent2); line-height: 1.55; }
+
   .quick-quiz { background: var(--surface2); border: 1px solid var(--border); border-radius: 13px; padding: 20px 24px; margin-top: 24px; position: relative; overflow: hidden; }
   .quick-quiz::before { content: 'Q&A'; position: absolute; right: 18px; top: 10px; font-family: 'Fraunces', serif; font-size: 3.2rem; font-weight: 900; color: var(--text-dim); opacity: 0.25; line-height: 1; pointer-events: none; }
   .quick-quiz h4 { font-family: 'Fraunces', serif; font-size: 1rem; color: var(--accent); margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
@@ -278,6 +307,9 @@
     .pattern-grid { grid-template-columns: 1fr; }
     .two-col { grid-template-columns: 1fr; }
     .entity-grid { grid-template-columns: 1fr; }
+    .sieve-flow { grid-template-columns: 1fr; }
+    .sieve-arrow { display: none; }
+    .formula-compare { grid-template-columns: 1fr; }
     .hero { padding: 36px 20px 28px; }
     .content { padding: 20px 20px 60px; }
     .site-header { padding: 12px 20px; }
@@ -802,6 +834,54 @@
         <div class="def-box">The <strong>Opportunity Evaluation Sieve</strong> is a tool used to systematically assess the viability and potential of new business opportunities. It helps filter out less promising ideas and focus on those with the highest potential for success. Basing the business on a valid and feasible idea — opportunity map — is the best possible way to build a successful and sustainable business.</div>
 
         <div class="s-divider"><div class="s-divider-line"></div><div class="s-divider-text">Opportunity Evaluation Sieve — 3 Perspectives</div><div class="s-divider-line"></div></div>
+        <div class="viz-panel">
+          <div class="viz-title">Visual Sieve Flow</div>
+          <div class="sieve-flow">
+            <div class="sieve-node personal">
+              <h5>1) Personal Fit</h5>
+              <p>Interest, values, passion, skills, risk appetite</p>
+            </div>
+            <div class="sieve-arrow">→</div>
+            <div class="sieve-node market">
+              <h5>2) Market Fit</h5>
+              <p>Real need, customer size, value proposition strength</p>
+            </div>
+            <div class="sieve-arrow">→</div>
+            <div class="sieve-node industry">
+              <h5>3) Industry Fit</h5>
+              <p>Competition, complexity, USP, profitability potential</p>
+            </div>
+          </div>
+          <div class="diagram-box" role="img" aria-label="Opportunity Evaluation Sieve diagram showing three sequential filters: Personal Fit, Market Fit, and Industry Fit">
+            <svg viewBox="0 0 900 180" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <marker id="arrowHead" markerWidth="10" markerHeight="8" refX="8" refY="4" orient="auto">
+                  <polygon points="0,0 10,4 0,8" fill="#6f7696"></polygon>
+                </marker>
+              </defs>
+              <rect x="18" y="35" width="240" height="110" rx="12" fill="rgba(66,221,176,0.08)" stroke="rgba(66,221,176,0.75)" />
+              <text x="34" y="62" font-size="16" font-weight="700">1) Personal Fit</text>
+              <text x="34" y="88" font-size="13">Interest · Values · Passion</text>
+              <text x="34" y="107" font-size="13">Skills · Resources · Risk</text>
+
+              <line x1="270" y1="90" x2="326" y2="90" stroke="#6f7696" stroke-width="3" marker-end="url(#arrowHead)" />
+
+              <rect x="332" y="35" width="240" height="110" rx="12" fill="rgba(129,141,255,0.08)" stroke="rgba(129,141,255,0.78)" />
+              <text x="348" y="62" font-size="16" font-weight="700">2) Market Fit</text>
+              <text x="348" y="88" font-size="13">Real Need · Customer Size</text>
+              <text x="348" y="107" font-size="13">Value Proposition</text>
+
+              <line x1="584" y1="90" x2="640" y2="90" stroke="#6f7696" stroke-width="3" marker-end="url(#arrowHead)" />
+
+              <rect x="646" y="35" width="236" height="110" rx="12" fill="rgba(240,200,80,0.08)" stroke="rgba(240,200,80,0.78)" />
+              <text x="662" y="62" font-size="16" font-weight="700">3) Industry Fit</text>
+              <text x="662" y="88" font-size="13">Competition · Complexity</text>
+              <text x="662" y="107" font-size="13">USP · Profitability</text>
+            </svg>
+          </div>
+          <div class="diagram-caption">OES flow: the idea is filtered left-to-right and proceeds only if it passes all three checks.</div>
+          <div class="viz-muted">Only opportunities that pass all three filters move forward.</div>
+        </div>
         <div class="step">
           <div class="step-num">1</div>
           <div class="step-content"><strong>Personal / Entrepreneur's Perspective</strong>
@@ -922,6 +1002,25 @@
         <div class="model-card">
           <div class="model-icon">📊</div>
           <div><div class="model-name">2. Long Tail</div><div class="model-desc">Coined by <strong>Chris Anderson (2004)</strong>. Strategy of selling a large number of unique items in relatively small quantities. Products with low demand can collectively make up a market share rivalling bestsellers — but only if the store or distribution channel is large enough. The head = small number of bestsellers; The long tail = very large number of niche products.</div><div class="model-examples"><span class="model-tag">Amazon</span><span class="model-tag">Netflix</span><span class="model-tag">Spotify</span><span class="model-tag">YouTube</span><span class="model-tag india">Craftsvilla</span></div></div>
+        </div>
+        <div class="tail-visual">
+          <div class="viz-title">Long Tail Shape (Visual)</div>
+          <div class="tail-track">
+            <div class="tail-bar tail-head" style="height:66px;"></div>
+            <div class="tail-bar tail-head" style="height:56px;"></div>
+            <div class="tail-bar" style="height:42px;"></div>
+            <div class="tail-bar" style="height:33px;"></div>
+            <div class="tail-bar" style="height:26px;"></div>
+            <div class="tail-bar" style="height:20px;"></div>
+            <div class="tail-bar" style="height:15px;"></div>
+            <div class="tail-bar" style="height:11px;"></div>
+            <div class="tail-bar" style="height:8px;"></div>
+            <div class="tail-bar" style="height:6px;"></div>
+          </div>
+          <div class="tail-labels">
+            <span><strong>Head:</strong> Few bestsellers, high individual sales</span>
+            <span><strong>Tail:</strong> Many niche items, low individual sales but high combined sales</span>
+          </div>
         </div>
         <div class="model-card">
           <div class="model-icon">🔧</div>
@@ -1429,6 +1528,21 @@
         <div class="def-box">Break Even Analysis examines the interaction among fixed costs, variable costs, prices, and unit volume to determine that combination of elements in which revenues and total costs are equal. It gives the analysis of the sales volume where the variable costs and fixed costs of the products are recovered.</div>
         <div class="def-box"><strong>BEP (Break Even Point):</strong> The point where Total Revenue received equals the Total Costs associated with the sale of the product (TR = TC). Also called the <strong>No Profit, No Loss Zone</strong>. Below BEP = loss; above BEP = profit.</div>
         <div class="formula">BEP (units) = Fixed Costs ÷ (Selling Price − Variable Cost per unit)</div>
+        <div class="formula-compare">
+          <div class="formula-chip">
+            <div class="f-label">Core Distinction</div>
+            <div class="f-eq">Contribution / unit = SP - VC</div>
+          </div>
+          <div class="formula-chip">
+            <div class="f-label">BEP in Units</div>
+            <div class="f-eq">BEP (units) = FC / Contribution per unit</div>
+          </div>
+          <div class="formula-chip">
+            <div class="f-label">BEP in Sales Value</div>
+            <div class="f-eq">BEP (sales) = FC / P/V ratio</div>
+          </div>
+        </div>
+        <div class="viz-muted">P/V ratio (Profit-Volume ratio) = Contribution / Sales.</div>
         <div class="spotlight">
           <div class="spotlight-icon">☕</div>
           <div>
