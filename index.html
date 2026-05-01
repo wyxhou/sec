@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Entrepreneurship & New Enterprise Creation — SEC Notes</title>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,700;0,900;1,300;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -45,7 +45,7 @@
     --glow-purple: rgba(62,77,192,0.07);
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
   body {
     background: var(--bg);
     color: var(--text);
@@ -53,6 +53,7 @@
     font-size: 15px;
     line-height: 1.75;
     transition: background 0.3s, color 0.3s;
+    overflow-x: hidden;
   }
   ::-webkit-scrollbar { width: 6px; }
   ::-webkit-scrollbar-track { background: transparent; }
@@ -157,9 +158,9 @@
   .analogy-box { background: color-mix(in srgb, var(--accent2) 6%, var(--surface2)); border: 1px solid color-mix(in srgb, var(--accent2) 20%, transparent); border-radius: 11px; padding: 13px 17px; margin: 13px 0; font-size: 0.84rem; color: var(--text-muted); }
   .analogy-box .analogy-label { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent2); margin-bottom: 5px; display: flex; align-items: center; gap: 5px; }
 
-  .comp-table { width: 100%; border-collapse: collapse; margin: 13px 0; font-size: 0.81rem; border-radius: 10px; overflow: hidden; }
+  .comp-table { width: 100%; border-collapse: collapse; margin: 13px 0; font-size: 0.81rem; border-radius: 10px; overflow: hidden; table-layout: fixed; }
   .comp-table th { background: var(--surface3); color: var(--accent); font-weight: 600; font-size: 0.67rem; text-transform: uppercase; letter-spacing: 0.08em; padding: 10px 13px; text-align: left; border-bottom: 2px solid var(--border); }
-  .comp-table td { padding: 9px 13px; border-bottom: 1px solid var(--border); color: var(--text-muted); vertical-align: top; }
+  .comp-table td { padding: 9px 13px; border-bottom: 1px solid var(--border); color: var(--text-muted); vertical-align: top; overflow-wrap: anywhere; word-break: break-word; }
   .comp-table tr:last-child td { border-bottom: none; }
   .comp-table tr:hover td { background: var(--surface2); color: var(--text); }
   .comp-table td:first-child { color: var(--text); font-weight: 500; }
@@ -170,7 +171,7 @@
   .note-list li::before { content: '→'; position: absolute; left: 0; color: var(--accent2); }
   .note-list li strong { color: var(--text); }
 
-  .formula { background: var(--surface2); border: 1px solid var(--accent2); border-radius: 11px; padding: 14px 20px; text-align: center; font-family: 'DM Mono', monospace; font-size: 0.92rem; color: var(--accent2); margin: 13px 0; letter-spacing: 0.04em; position: relative; overflow: hidden; }
+  .formula { background: var(--surface2); border: 1px solid var(--accent2); border-radius: 11px; padding: 14px 20px; text-align: center; font-family: 'DM Mono', monospace; font-size: 0.92rem; color: var(--accent2); margin: 13px 0; letter-spacing: 0.04em; position: relative; overflow: hidden; overflow-wrap: anywhere; }
   .formula::before { content: ''; position: absolute; inset: 0; background: var(--glow-purple); }
 
   .tip-box { border-radius: 10px; padding: 12px 16px; margin: 13px 0; font-size: 0.83rem; display: flex; gap: 11px; align-items: flex-start; }
@@ -275,7 +276,7 @@
   .sieve-node.industry { border-color: color-mix(in srgb, var(--accent) 45%, transparent); }
   .sieve-arrow { color: var(--text-dim); font-size: 1.05rem; text-align: center; }
   .diagram-box { background: var(--surface); border: 1px solid var(--border-bright); border-radius: 10px; padding: 10px; margin-top: 10px; overflow-x: auto; }
-  .diagram-box svg { min-width: 680px; width: 100%; height: 170px; display: block; }
+  .diagram-box svg { min-width: 0; width: 100%; height: auto; max-height: 190px; display: block; }
   .diagram-box text { font-family: 'DM Sans', sans-serif; fill: var(--text); }
   .diagram-caption { font-size: 0.73rem; color: var(--text-muted); margin-top: 8px; }
 
@@ -283,13 +284,28 @@
   .tail-track { display: grid; grid-template-columns: repeat(10, 1fr); gap: 4px; align-items: end; height: 70px; margin: 8px 0; }
   .tail-bar { border-radius: 4px 4px 0 0; background: linear-gradient(180deg, color-mix(in srgb, var(--accent2) 55%, transparent), color-mix(in srgb, var(--accent2) 20%, transparent)); border: 1px solid color-mix(in srgb, var(--accent2) 45%, transparent); border-bottom: none; }
   .tail-head { background: linear-gradient(180deg, color-mix(in srgb, var(--accent3) 55%, transparent), color-mix(in srgb, var(--accent3) 20%, transparent)); border-color: color-mix(in srgb, var(--accent3) 45%, transparent); }
-  .tail-labels { display: flex; justify-content: space-between; gap: 8px; font-size: 0.72rem; color: var(--text-muted); }
+  .tail-labels { display: flex; justify-content: space-between; gap: 8px; font-size: 0.72rem; color: var(--text-muted); flex-wrap: wrap; }
   .tail-labels strong { color: var(--text); }
 
   .formula-compare { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin: 12px 0; }
   .formula-chip { background: var(--surface2); border: 1px solid var(--border); border-radius: 10px; padding: 10px; }
   .formula-chip .f-label { font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 5px; font-weight: 700; }
   .formula-chip .f-eq { font-family: 'DM Mono', monospace; font-size: 0.72rem; color: var(--accent2); line-height: 1.55; }
+
+  .mindmap-shell { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 20px; }
+  .mindmap-root { background: color-mix(in srgb, var(--accent) 12%, var(--surface2)); border: 1px solid color-mix(in srgb, var(--accent) 35%, transparent); border-radius: 12px; padding: 12px 14px; text-align: center; font-family: 'Fraunces', serif; font-size: 1rem; color: var(--accent); margin-bottom: 14px; }
+  .mindmap-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .mind-node { background: var(--surface2); border: 1px solid var(--border); border-radius: 12px; padding: 12px; position: relative; }
+  .mind-node::before { content: ''; position: absolute; top: -10px; left: 16px; width: 1px; height: 10px; background: var(--border-bright); }
+  .mind-node h4 { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 6px; }
+  .mind-node ul { list-style: none; }
+  .mind-node li { font-size: 0.77rem; color: var(--text-muted); padding: 2px 0 2px 14px; position: relative; line-height: 1.45; }
+  .mind-node li::before { content: '•'; position: absolute; left: 0; color: var(--accent2); }
+  .mind-u1 h4 { color: var(--accent4); }
+  .mind-u2 h4 { color: var(--accent2); }
+  .mind-u3 h4 { color: var(--accent); }
+  .mind-u4 h4 { color: var(--accent5); }
+  .mind-u5 h4 { color: var(--accent3); }
 
   .quick-quiz { background: var(--surface2); border: 1px solid var(--border); border-radius: 13px; padding: 20px 24px; margin-top: 24px; position: relative; overflow: hidden; }
   .quick-quiz::before { content: 'Q&A'; position: absolute; right: 18px; top: 10px; font-family: 'Fraunces', serif; font-size: 3.2rem; font-weight: 900; color: var(--text-dim); opacity: 0.25; line-height: 1; pointer-events: none; }
@@ -310,9 +326,26 @@
     .sieve-flow { grid-template-columns: 1fr; }
     .sieve-arrow { display: none; }
     .formula-compare { grid-template-columns: 1fr; }
-    .hero { padding: 36px 20px 28px; }
-    .content { padding: 20px 20px 60px; }
+    .mindmap-grid { grid-template-columns: 1fr; }
+    .hero { padding: 30px 16px 24px; }
+    .hero h1 { font-size: clamp(1.85rem, 8vw, 2.5rem); line-height: 1.13; }
+    .hero-sub { font-size: 0.84rem; line-height: 1.65; }
+    .topic-card { padding: 18px 16px; }
+    .module-title { font-size: 1.45rem; line-height: 1.2; }
+    .content { padding: 16px 14px 56px; }
     .site-header { padding: 12px 20px; }
+    .site-title { font-size: 0.9rem; }
+    .exam-badge { font-size: 0.58rem; padding: 3px 8px; }
+    .theme-btn { font-size: 0.7rem; padding: 5px 10px; }
+    .tail-track { height: 58px; }
+    .formula { font-size: 0.78rem; letter-spacing: 0.02em; padding: 12px 12px; }
+    .quick-quiz { padding: 16px 14px; }
+    .quick-quiz::before { font-size: 2.2rem; right: 12px; }
+    .model-card { grid-template-columns: 1fr; gap: 8px; }
+    .model-icon { font-size: 1.1rem; }
+    .diagram-box { padding: 8px; }
+    .diagram-box svg { max-height: 210px; }
+    .back-top { width: 38px; height: 38px; right: 14px; bottom: 14px; }
   }
 </style>
 </head>
@@ -355,6 +388,7 @@
   <aside class="sidebar">
     <div class="sidebar-section">
       <div class="sidebar-label">Modules</div>
+      <a href="#quick-mindmap">Quick Mindmap — Module Flow</a>
 
       <a href="#unit1">Unit I — Introduction</a>
       <a href="#unit1-definitions" class="sidebar-sub">Definitions & Etymology</a>
@@ -2001,6 +2035,76 @@
         <div class="quiz-item">
           <div class="quiz-q">Q: Difference between Merger (Absorption) and Merger (Amalgamation)?</div>
           <div class="quiz-a">Absorption: One company takes over another — acquiring company continues to exist, acquired company loses its identity. Amalgamation: Two or more companies combine to form a completely NEW company — all old companies cease to exist. Example: HDFC Ltd merged into HDFC Bank (Absorption).</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════
+         QUICK MINDMAP / FLOWCHART
+    ══════════════════════════════ -->
+    <section class="module-section" id="quick-mindmap">
+      <div class="module-header">
+        <div class="module-eyebrow">
+          <span class="module-num">QUICK MAP</span>
+          <span class="module-hours">1-page revision</span>
+        </div>
+        <h2 class="module-title">Flowchart Mindmap — Module-wise Short Notes</h2>
+        <p class="module-desc">Use this as a 5-minute revision map before exam: each module has only the highest-yield cue points.</p>
+      </div>
+      <div class="module-divider"></div>
+
+      <div class="mindmap-shell">
+        <div class="mindmap-root">Entrepreneurship & New Enterprise Creation</div>
+        <div class="mindmap-grid">
+          <div class="mind-node mind-u1">
+            <h4>Unit I — Entrepreneurship Basics</h4>
+            <ul>
+              <li>Entrepreneur vs Manager vs Intrapreneur</li>
+              <li>Classification, Traits, Functions</li>
+              <li>Locus of Control, Profiling</li>
+              <li>Women entrepreneurship: problems + remedies</li>
+            </ul>
+          </div>
+
+          <div class="mind-node mind-u2">
+            <h4>Unit II — Opportunity Selection</h4>
+            <ul>
+              <li>Idea vs Opportunity distinction</li>
+              <li>Opportunity Analysis: Sighting + Evaluation</li>
+              <li>OES: Personal → Market → Industry fit</li>
+              <li>Screening questions + startup strategy logic</li>
+            </ul>
+          </div>
+
+          <div class="mind-node mind-u3">
+            <h4>Unit III — Models & Creation</h4>
+            <ul>
+              <li>Types of business models (Long Tail etc.)</li>
+              <li>Lean Business Model Canvas (9 blocks)</li>
+              <li>Entity types + setup steps in India</li>
+              <li>Startup India/MSME support schemes</li>
+            </ul>
+          </div>
+
+          <div class="mind-node mind-u4">
+            <h4>Unit IV — Business Plan Build</h4>
+            <ul>
+              <li>Business plan: importance + components</li>
+              <li>Marketing plan, survey techniques, 7Ps</li>
+              <li>Financials: statements, budgets, BEP</li>
+              <li>Org plan: MOA, AOA, Prospectus, HR basics</li>
+            </ul>
+          </div>
+
+          <div class="mind-node mind-u5">
+            <h4>Unit V — Finance, Growth, Exit</h4>
+            <ul>
+              <li>Funding ladder: Seed, Angel, VC, PE</li>
+              <li>IP rights: Trademark, Copyright, Patent, GI</li>
+              <li>Growth strategies: Internal + External</li>
+              <li>Exit strategies: reasons + prep steps</li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
