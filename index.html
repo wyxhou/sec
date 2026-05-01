@@ -625,6 +625,85 @@
     .content { padding: 24px 20px 60px; }
     .site-header { padding: 12px 20px; }
   }
+
+  /* ─── HIGH PRIORITY SYSTEM ─── */
+  .topic-card.priority-high {
+    border-color: rgba(255, 80, 80, 0.45);
+    box-shadow: 0 0 0 1px rgba(255, 80, 80, 0.18), 0 6px 30px rgba(255, 60, 60, 0.12);
+    position: relative;
+  }
+  .topic-card.priority-high::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 16px;
+    background: linear-gradient(135deg, rgba(255,60,60,0.04) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .topic-card.priority-high:hover {
+    border-color: rgba(255, 80, 80, 0.7);
+    box-shadow: 0 0 0 1px rgba(255, 80, 80, 0.3), 0 12px 40px rgba(255, 60, 60, 0.18);
+  }
+  [data-theme="light"] .topic-card.priority-high {
+    border-color: rgba(200, 30, 30, 0.4);
+    box-shadow: 0 0 0 1px rgba(200,30,30,0.15), 0 4px 20px rgba(200,30,30,0.08);
+  }
+
+  .priority-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: rgba(255, 60, 60, 0.14);
+    color: #ff5050;
+    border: 1px solid rgba(255, 60, 60, 0.35);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.58rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 3px 9px;
+    border-radius: 5px;
+    flex-shrink: 0;
+    vertical-align: middle;
+  }
+  .priority-badge::before { content: '🔴'; font-size: 0.55rem; }
+  [data-theme="light"] .priority-badge { color: #c02020; background: rgba(200,30,30,0.1); border-color: rgba(200,30,30,0.3); }
+
+  .priority-banner {
+    background: rgba(255, 60, 60, 0.08);
+    border: 1px solid rgba(255, 60, 60, 0.28);
+    border-radius: 9px;
+    padding: 10px 15px;
+    margin-bottom: 16px;
+    font-size: 0.8rem;
+    color: #ff6060;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    font-weight: 500;
+  }
+  [data-theme="light"] .priority-banner { color: #b02020; background: rgba(200,30,30,0.07); border-color: rgba(200,30,30,0.25); }
+
+  /* functions-of-entrepreneur box */
+  .functions-box {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-left: 3px solid #ff6060;
+    border-radius: 0 10px 10px 0;
+    padding: 14px 18px;
+    margin: 13px 0;
+  }
+  .functions-box h4 {
+    font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.1em; color: #ff6060; margin-bottom: 10px;
+  }
+  .functions-box ul { list-style: none; padding: 0; }
+  .functions-box li {
+    font-size: 0.85rem; color: var(--text-muted);
+    padding: 4px 0 4px 20px; position: relative;
+  }
+  .functions-box li::before { content: '▸'; position: absolute; left: 0; color: #ff6060; }
+  .functions-box li strong { color: var(--text); }
 </style>
 </head>
 <body>
@@ -676,13 +755,26 @@
       <a href="#unit5">Unit V — Startup Finances</a>
     </div>
     <div class="sidebar-section">
-      <div class="sidebar-label">Key Topics</div>
-      <a href="#entrepreneur-types">Types of Entrepreneurs</a>
+      <div class="sidebar-label">🔴 High Priority</div>
+      <a href="#entrepreneur-types">Entrepreneur vs Manager vs Intrapreneur</a>
+      <a href="#unit1" style="color:#ff6060;">Traits + Functions of Entrepreneur</a>
+      <a href="#unit2" style="color:#ff6060;">Idea vs Opportunity</a>
+      <a href="#unit2" style="color:#ff6060;">Two Stages of Opp. Analysis</a>
+      <a href="#entity-types" style="color:#ff6060;">Forms of Business Org.</a>
+      <a href="#unit3" style="color:#ff6060;">Steps to Set Up Business (India)</a>
+      <a href="#unit3" style="color:#ff6060;">Lean Canvas — Guaranteed ★</a>
+      <a href="#financial-plan" style="color:#ff6060;">Financial Statements + Cost</a>
+      <a href="#ip-rights" style="color:#ff6060;">IP Rights</a>
+      <a href="#unit5" style="color:#ff6060;">Exit Strategies — Very Important</a>
+      <a href="#unit5" style="color:#ff6060;">Growth Strategies</a>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-label">Other Key Topics</div>
       <a href="#biz-models">Business Model Types</a>
-      <a href="#entity-types">Entity Types</a>
-      <a href="#financial-plan">Financial Plan</a>
-      <a href="#ip-rights">IP Rights</a>
       <a href="#govt-schemes">Govt. Schemes</a>
+      <a href="#unit3">Recruitment / Training / Motivation</a>
+      <a href="#unit4">Marketing Plan &amp; 7Ps</a>
+      <a href="#unit5">VC / Angel / PE Financing</a>
     </div>
     <div class="progress-indicator" id="readProgress">0% read</div>
   </aside>
@@ -798,8 +890,9 @@
         </div>
       </div>
 
-      <div class="topic-card">
-        <h3>Traits of a Successful Entrepreneur <span class="tag tag-a">Part A</span></h3>
+      <div class="topic-card priority-high">
+        <h3>Traits of a Successful Entrepreneur <span class="tag tag-a">Part A</span> <span class="priority-badge">High Priority</span></h3>
+        <div class="priority-banner">🔴 Frequently asked — know all traits with brief explanations. Often appears as a 5-mark or 10-mark question.</div>
         <div class="chip-grid">
           <div class="chip">Creative & Innovative</div>
           <div class="chip">Goal-Oriented</div>
@@ -819,6 +912,28 @@
             <div class="spotlight-title">Zomato was rejected by 50 investors before its first funding round</div>
             <div class="spotlight-body">Deepinder Goyal pitched Zomato (then FoodieBay) to over 50 VCs who passed. He kept going. The company eventually IPO'd in 2021 at a valuation of ₹64,000 crore. Persistence is not romantic — it is a competitive advantage.</div>
           </div>
+        </div>
+      </div>
+
+      <div class="topic-card priority-high">
+        <h3>Functions of an Entrepreneur <span class="tag tag-b">Part B</span> <span class="priority-badge">High Priority</span></h3>
+        <div class="priority-banner">⚠️ Note: Characteristics ≠ Functions. These are different topics — a common exam trap. Functions describe what an entrepreneur <em>does</em>; characteristics describe what they <em>are</em>. Sometimes asked as a case study.</div>
+        <div class="functions-box">
+          <h4>Core Functions</h4>
+          <ul>
+            <li><strong>Innovation:</strong> Introducing new products, services, methods, or markets. Schumpeter called this "creative destruction."</li>
+            <li><strong>Risk-Bearing:</strong> Willingly taking on financial, social, and psychological uncertainty of a new venture.</li>
+            <li><strong>Organising Resources:</strong> Combining land, labour, capital, and technology into a productive enterprise.</li>
+            <li><strong>Decision-Making:</strong> Making key strategic choices about production, pricing, markets, and investments.</li>
+            <li><strong>Management & Coordination:</strong> Planning, organising, directing, and controlling business operations.</li>
+            <li><strong>Marketing:</strong> Identifying customer needs and ensuring the product reaches the right people at the right price.</li>
+            <li><strong>Capital Formation:</strong> Mobilising funds from personal savings, banks, investors, or government schemes.</li>
+            <li><strong>Employment Creation:</strong> Creating jobs directly (within the firm) and indirectly (through the supply chain).</li>
+          </ul>
+        </div>
+        <div class="tip-box tip-warn">
+          <span class="tip-icon">⚠️</span>
+          <span><strong>Exam Tip:</strong> If asked as a case study, identify which function the entrepreneur in the scenario is performing — e.g., Deepinder Goyal pivoting Zomato during COVID = <em>Decision-making + Innovation</em>.</span>
         </div>
       </div>
 
@@ -866,8 +981,9 @@
       </div>
       <div class="unit-divider"></div>
 
-      <div class="topic-card">
-        <h3>Business Idea vs Business Opportunity <span class="tag tag-b">Part B</span></h3>
+      <div class="topic-card priority-high">
+        <h3>Business Idea vs Business Opportunity <span class="tag tag-b">Part B</span> <span class="priority-badge">High Priority</span></h3>
+        <div class="priority-banner">🔴 Asked last semester — often phrased as "A good idea is not necessarily a good business opportunity. Justify." Prepare a full answer with the table + this argument.</div>
         <table class="comp-table">
           <tr><th>Aspect</th><th>Business Idea</th><th>Business Opportunity</th></tr>
           <tr><td>Stage</td><td>Early, theoretical</td><td>Advanced, practical & proven</td></tr>
@@ -895,8 +1011,9 @@
         </ul>
       </div>
 
-      <div class="topic-card">
-        <h3>Opportunity Analysis — Two Stages <span class="tag tag-b">Part B</span></h3>
+      <div class="topic-card priority-high">
+        <h3>Opportunity Analysis — Two Stages <span class="tag tag-b">Part B</span> <span class="priority-badge">High Priority</span></h3>
+        <div class="priority-banner">🔴 Two stages of opportunity selection is a highlighted red topic. Know the names, definitions, and sub-types (Market-Driven vs People-Driven) clearly.</div>
 
         <div class="quote-box">
           The overwhelming majority of successful innovations exploit change.
@@ -1136,8 +1253,9 @@
         </div>
       </div>
 
-      <div class="topic-card" id="entity-types">
-        <h3>Forms of Business Organisation <span class="tag tag-c">Part C</span></h3>
+      <div class="topic-card priority-high" id="entity-types">
+        <h3>Forms of Business Organisation <span class="tag tag-c">Part C</span> <span class="priority-badge">High Priority</span></h3>
+        <div class="priority-banner">🔴 Red-highlighted in important topics. Focus especially on Sole Proprietorship, Joint Stock Company, and LLC — including advantages, disadvantages, and liability type.</div>
 
         <div class="entity-grid">
           <div class="entity-card">
@@ -1181,8 +1299,9 @@
         </div>
       </div>
 
-      <div class="topic-card">
-        <h3>Steps to Set Up a Business in India <span class="tag tag-b">Part B</span></h3>
+      <div class="topic-card priority-high">
+        <h3>Steps to Set Up a Business in India <span class="tag tag-b">Part B</span> <span class="priority-badge">Asked Every Time</span></h3>
+        <div class="priority-banner">🔴 Asked in every exam according to the important topics sheet. Memorise all 10 steps in order with key details (e.g., EPFO = 20+ employees, 12% each; ESI = 10+ employees, 3.25% + 0.75%).</div>
         <div class="steps">
           <div class="step"><div class="step-num">1</div><div class="step-content"><strong>DIN — Director Identification Number</strong>Unique lifetime number from Ministry of Corporate Affairs. One person = one DIN only. Applied individually, not by the company. Authorised by a Gazetted officer.</div></div>
           <div class="step"><div class="step-num">2</div><div class="step-content"><strong>DSC — Digital Signature Certificate</strong>To electronically sign documents submitted to Registrar of Companies (ROC). Issued by authorized agencies (e.g. TCS).</div></div>
@@ -1196,7 +1315,7 @@
           <div class="step"><div class="step-num">10</div><div class="step-content"><strong>ESI — Employees' State Insurance</strong>For 10+ employees earning ≤ ₹21,000/month. Employer: 3.25%; Employee: 0.75% of gross salary. Provides health & social security coverage.</div></div>
         </div>
 
-        <div class="s-divider"><div class="s-divider-line"></div><div class="s-divider-text">MOA vs AOA</div><div class="s-divider-line"></div></div>
+        <div class="s-divider"><div class="s-divider-line"></div><div class="s-divider-text">MOA vs AOA — <span style="color:#ff6060;">🔴 Red Highlighted</span></div><div class="s-divider-line"></div></div>
         <table class="comp-table">
           <tr><th>Aspect</th><th>MOA (Memorandum of Association)</th><th>AOA (Articles of Association)</th></tr>
           <tr><td>Purpose</td><td>Constitution of the company; defines scope & powers</td><td>Internal operating rules & regulations</td></tr>
@@ -1252,6 +1371,107 @@
         </div>
       </div>
 
+      </div>
+
+      <div class="topic-card">
+        <h3>Organisational Plan — Recruitment, Training, Motivation & Retention <span class="tag tag-b">Part B</span></h3>
+        <div class="priority-banner" style="border-color:rgba(129,141,255,0.3);background:rgba(129,141,255,0.07);color:var(--accent2);">📌 These sub-topics from the Organisational Plan module are listed in the important topics — each could appear as a 2-mark or 5-mark question.</div>
+
+        <div class="s-divider"><div class="s-divider-line"></div><div class="s-divider-text">Recruitment</div><div class="s-divider-line"></div></div>
+        <div class="def-box"><strong>Recruitment:</strong> "The process of locating, identifying and attracting capable applicants to an organisation." — It is the first step in staffing.</div>
+        <div class="two-col">
+          <div class="col-box blue">
+            <h4>Objectives</h4>
+            <ul>
+              <li>Find the right person for each role</li>
+              <li>Build a pipeline of qualified candidates</li>
+              <li>Reduce hiring time and cost</li>
+              <li>Ensure diversity and inclusion</li>
+            </ul>
+          </div>
+          <div class="col-box yellow">
+            <h4>Sources of Recruitment</h4>
+            <ul>
+              <li><strong>Internal:</strong> Promotions, transfers, employee referrals</li>
+              <li><strong>External:</strong> Job portals (Naukri, LinkedIn), campus placements, newspaper ads, recruitment agencies</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="s-divider"><div class="s-divider-line"></div><div class="s-divider-text">Training</div><div class="s-divider-line"></div></div>
+        <div class="def-box"><strong>Training:</strong> "The planned and organised activity to impart skills, techniques and methodologies to employees for contributing to the performance and success of the organisation."</div>
+        <div class="two-col">
+          <div class="col-box green">
+            <h4>Objectives of Training</h4>
+            <ul>
+              <li>Increase quantity and quality of output</li>
+              <li>Train for promotion to higher jobs</li>
+              <li>Adopt and use advanced technology</li>
+              <li>Handle organisational changes</li>
+              <li>Train in cultural values of the organisation</li>
+            </ul>
+          </div>
+          <div class="col-box blue">
+            <h4>Training Methods</h4>
+            <ul>
+              <li><strong>On-the-Job:</strong> Induction, Apprenticeship, Job Rotation, Coaching, Job Instruction</li>
+              <li><strong>Off-the-Job:</strong> Lectures, Seminars & Conferences, Role Playing, Audio-Visual Training</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="s-divider"><div class="s-divider-line"></div><div class="s-divider-text">Motivation</div><div class="s-divider-line"></div></div>
+        <div class="def-box"><strong>Motivation:</strong> The set of forces that cause people to behave in certain ways. Process: Needs → Interpretation of Goals → Goal-Directed Behaviour → Accomplishment.</div>
+        <div class="two-col">
+          <div class="col-box yellow">
+            <h4>Internal (Pull) Factors</h4>
+            <ul>
+              <li>Desire to do something new</li>
+              <li>Educational qualification</li>
+              <li>Technical background</li>
+              <li>Years of experience</li>
+              <li>Occupational background</li>
+            </ul>
+          </div>
+          <div class="col-box orange">
+            <h4>External (Push) Factors</h4>
+            <ul>
+              <li>Government support &amp; schemes</li>
+              <li>Availability of resources</li>
+              <li>Promising demand for the product</li>
+              <li>Support from business houses / mentors</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="s-divider"><div class="s-divider-line"></div><div class="s-divider-text">Employee Retention</div><div class="s-divider-line"></div></div>
+        <div class="def-box"><strong>Employee Retention:</strong> A systematic effort by employers to create and foster an environment that encourages current employees to remain employed by having policies and practices that address their diverse needs.</div>
+        <div class="two-col">
+          <div class="col-box red">
+            <h4>Causes of Turnover</h4>
+            <ul>
+              <li>Cultural conflict</li>
+              <li>Poor work environment</li>
+              <li>Long commuting</li>
+              <li>Lack of appreciation</li>
+              <li>Lack of organisational support</li>
+              <li>No career progression</li>
+            </ul>
+          </div>
+          <div class="col-box green">
+            <h4>Retention Strategies</h4>
+            <ul>
+              <li>Attractive compensation &amp; fringe benefits</li>
+              <li>Sound recognition programmes</li>
+              <li>Personal development plans</li>
+              <li>Appropriate working conditions</li>
+              <li>Participative management</li>
+              <li>Equal opportunity practices</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
       <div class="quick-quiz">
         <h4>🎯 Quick Exam Q&A — Unit III</h4>
         <div class="quiz-item">
@@ -1283,8 +1503,9 @@
       </div>
       <div class="unit-divider"></div>
 
-      <div class="topic-card">
-        <h3>Business Plan — Overview <span class="tag tag-a">Part A</span></h3>
+      <div class="topic-card priority-high">
+        <h3>Business Plan — Overview <span class="tag tag-a">Part A</span> <span class="priority-badge">High Priority</span></h3>
+        <div class="priority-banner">🔴 Both "Importance of Business Plan for multiple stakeholders" and "Components of Business Plan" are flagged as important in the PDF. Know the perspective of each stakeholder (entrepreneur, investor, bank, buyer, internal teams).</div>
         <div class="def-box">
           A <strong>formal statement</strong> of business goals, reasons they are attainable, and a plan for reaching them. Includes all relevant internal and external factors involved in starting a venture.
         </div>
@@ -1315,8 +1536,9 @@
         </div>
       </div>
 
-      <div class="topic-card">
-        <h3>Marketing Plan — 10 Components <span class="tag tag-c">Part C</span></h3>
+      <div class="topic-card priority-high">
+        <h3>Marketing Plan — 10 Components <span class="tag tag-c">Part C</span> <span class="priority-badge">High Priority</span></h3>
+        <div class="priority-banner">🔴 Market survey techniques and Marketing mix – 7 Ps are both red-highlighted. Learn all 10 components + the 7 Ps and market survey techniques as separate sub-topics.</div>
         <div class="def-box">A marketing plan is a <strong>written statement</strong> of marketing objectives, strategies, and activities to be followed in the business plan.</div>
 
         <div class="timeline">
@@ -1372,14 +1594,28 @@
           </div>
         </div>
 
-        <div class="tip-box tip-key">
-          <span class="tip-icon">★</span>
-          <span><strong>7 Ps of Marketing Mix:</strong> Product · Price · Place · Promotion + Physical Evidence · People · Process. The last 3 Ps are especially relevant to service businesses.</span>
+        <div class="tip-box tip-key" style="border-color: rgba(255,80,80,0.4); background: rgba(255,60,60,0.08);">
+          <span class="tip-icon">🔴</span>
+          <span><strong>7 Ps of Marketing Mix — Red Highlighted:</strong> Product · Price · Place · Promotion + <em>Physical Evidence</em> · <em>People</em> · <em>Process</em>. The last 3 distinguish service marketing from product marketing — know specific definitions.</span>
+        </div>
+
+        <div class="s-divider"><div class="s-divider-line"></div><div class="s-divider-text" style="color:#ff6060;">🔴 Market Survey Techniques — Red Highlighted</div><div class="s-divider-line"></div></div>
+        <div class="functions-box">
+          <h4>Techniques of Market Survey</h4>
+          <ul>
+            <li><strong>Observation:</strong> Study consumer behaviour without direct interaction — capturing real-time actions and emotional responses. No interviews needed; used in stores, online behaviour analytics.</li>
+            <li><strong>Experimentation:</strong> Deliberately manipulate one variable and measure its effect on another. E.g., A/B testing two different ad copies to see which drives more clicks.</li>
+            <li><strong>Depth Interviewing:</strong> Questions administered in a relaxed environment where respondents express themselves freely without fear of disapproval. Uncovers honest opinions.</li>
+            <li><strong>Projective Techniques:</strong> Uncover hidden emotions and subconscious attitudes by having respondents project onto ambiguous stimuli. E.g., "Complete this sentence: When I shop at DMart, I feel ___."</li>
+            <li><strong>Survey / Questionnaire:</strong> Structured collection of data from a sample of respondents. Most common primary data tool. Can be online, phone, or in-person.</li>
+            <li><strong>Focus Groups:</strong> Small group discussion (6–10 people) moderated to gather qualitative insights on a product, brand, or concept.</li>
+          </ul>
         </div>
       </div>
 
-      <div class="topic-card" id="financial-plan">
-        <h3>Financial Plan <span class="tag tag-c">Part C</span></h3>
+      <div class="topic-card priority-high" id="financial-plan">
+        <h3>Financial Plan <span class="tag tag-c">Part C</span> <span class="priority-badge">High Priority</span></h3>
+        <div class="priority-banner">🔴 Financial statements (all 4 — meanings) and Elements of Cost are both red-highlighted. Ratio analysis is low priority — just know what each type measures.</div>
         <div class="def-box">Determines potential investment commitment for a new venture and indicates whether the business plan is <strong>economically feasible</strong>. Includes the three primary financial statements.</div>
 
         <div class="two-col">
@@ -1403,7 +1639,7 @@
           </div>
         </div>
 
-        <div class="s-divider"><div class="s-divider-line"></div><div class="s-divider-text">4 Financial Statements</div><div class="s-divider-line"></div></div>
+        <div class="s-divider"><div class="s-divider-line"></div><div class="s-divider-text" style="color:#ff6060;">🔴 4 Financial Statements — Red Highlighted</div><div class="s-divider-line"></div></div>
         <table class="comp-table">
           <tr><th>Statement</th><th>What it Shows</th><th>Time Reference</th></tr>
           <tr><td>Balance Sheet</td><td>Assets, Liabilities, Net Worth (Shareholders' Equity)</td><td>At a single point in time ("snapshot")</td></tr>
@@ -1432,7 +1668,7 @@
           </div>
         </div>
 
-        <div class="s-divider"><div class="s-divider-line"></div><div class="s-divider-text">Ratio Analysis</div><div class="s-divider-line"></div></div>
+        <div class="s-divider"><div class="s-divider-line"></div><div class="s-divider-text">Ratio Analysis <span style="color:var(--text-dim);font-weight:400;text-transform:none;letter-spacing:0;">(Low Priority — know meanings only)</span></div><div class="s-divider-line"></div></div>
         <div class="chip-grid">
           <div class="chip"><strong>Liquidity Ratios</strong>Can the firm pay its bills this year? (Current Ratio, Quick Ratio)</div>
           <div class="chip"><strong>Solvency Ratios</strong>Can the firm survive long-term debt? (Debt-to-Equity, Interest Coverage)</div>
@@ -1440,7 +1676,7 @@
           <div class="chip"><strong>Profitability Ratios</strong>Is the firm generating value? (Net Profit Margin, ROE, ROCE)</div>
         </div>
 
-        <div class="s-divider"><div class="s-divider-line"></div><div class="s-divider-text">Elements of Cost</div><div class="s-divider-line"></div></div>
+        <div class="s-divider"><div class="s-divider-line"></div><div class="s-divider-text" style="color:#ff6060;">🔴 Elements of Cost — Very Important</div><div class="s-divider-line"></div></div>
         <div class="two-col">
           <div class="col-box blue">
             <h4>Direct Costs → Prime Cost</h4>
@@ -1539,8 +1775,9 @@
         </div>
       </div>
 
-      <div class="topic-card" id="ip-rights">
-        <h3>Intellectual Property Rights <span class="tag tag-b">Part B</span></h3>
+      <div class="topic-card priority-high" id="ip-rights">
+        <h3>Intellectual Property Rights <span class="tag tag-b">Part B</span> <span class="priority-badge">High Priority</span></h3>
+        <div class="priority-banner">🔴 Learn the meaning and examples of each IP type. Filing process is NOT high priority — but trademark filing steps may appear as a short list answer. Focus on the table below.</div>
 
         <div class="def-box">
           <strong>Intellectual Property (IP)</strong> = legal rights granted over creations, inventions, and brand identities. Prevents others from using your work without permission.
@@ -1566,8 +1803,9 @@
         </div>
       </div>
 
-      <div class="topic-card">
-        <h3>Growth Strategies <span class="tag tag-b">Part B</span></h3>
+      <div class="topic-card priority-high">
+        <h3>Growth Strategies <span class="tag tag-b">Part B</span> <span class="priority-badge">Very Important</span></h3>
+        <div class="priority-banner">🔴 "Main strategies of growth – very important" per the important topics sheet. Know both Internal and External growth strategies with clear distinctions and Indian examples.</div>
         <div class="two-col">
           <div class="col-box green">
             <h4>🏠 Internal Growth</h4>
@@ -1591,8 +1829,9 @@
         <div class="def-box"><strong>Merger distinction:</strong> Absorption = one company takes over another; acquired company loses identity. Amalgamation = both companies dissolve, forming a brand new entity. Example: HDFC Bank + HDFC Ltd merger (2023) was an Absorption — HDFC Ltd merged into HDFC Bank.</div>
       </div>
 
-      <div class="topic-card">
-        <h3>Exit Strategies <span class="tag tag-b">Part B</span></h3>
+      <div class="topic-card priority-high">
+        <h3>Exit Strategies <span class="tag tag-b">Part B</span> <span class="priority-badge">Very Important</span></h3>
+        <div class="priority-banner">🔴 Explicitly flagged as "very important" in the PDF in red. Know all 5 exit strategies + 7 reasons for exiting + how to prepare for an exit. This is a likely Part B or Part C question.</div>
         <ul class="note-list">
           <li><strong>Merger or Acquisition (M&A):</strong> Sell business to another company. Walmart acquired Flipkart for $16B. Zomato acquired Blinkit (then Grofers).</li>
           <li><strong>Management / Investor Buyout:</strong> Partners or employees buy out the founder. Common in family businesses transitioning to professional management.</li>
@@ -1611,10 +1850,24 @@
           <div class="chip">Better Opportunities elsewhere</div>
           <div class="chip">Personal Reasons (health, relocation)</div>
         </div>
+
+        <div class="s-divider"><div class="s-divider-line"></div><div class="s-divider-text" style="color:#ff6060;">🔴 Preparing for an Exit</div><div class="s-divider-line"></div></div>
+        <div class="functions-box">
+          <h4>6 Steps to Prepare for an Exit</h4>
+          <ul>
+            <li><strong>Focus on the Business:</strong> Ensure the business is operating efficiently and remains profitable before exit. A well-managed, financially stable business attracts higher valuations.</li>
+            <li><strong>Large & Diversified Customer Base:</strong> Multiple revenue streams reduce buyer risk. Avoid over-dependence on a few customers — this lowers valuation.</li>
+            <li><strong>Regulatory Compliance:</strong> Follow all legal, financial, tax, and labour laws. Any compliance gap can delay or kill a deal.</li>
+            <li><strong>Proper Documentation:</strong> Maintain up-to-date financial records — balance sheets, P&L, tax filings. Organised documentation builds buyer trust.</li>
+            <li><strong>Review Contracts:</strong> Update supplier, customer, and employee contracts. Long-term client contracts increase business value significantly.</li>
+            <li><strong>Competent Management Team:</strong> Train successors to take over smoothly. A business that depends entirely on the founder is worth less — buyers want continuity.</li>
+          </ul>
+        </div>
       </div>
 
-      <div class="topic-card">
-        <h3>Enterprise Life Cycle & Lean Methodology <span class="tag tag-a">Part A</span></h3>
+      <div class="topic-card priority-high">
+        <h3>Enterprise Life Cycle & Lean Methodology <span class="tag tag-a">Part A</span> <span class="priority-badge">Guaranteed Question</span></h3>
+        <div class="priority-banner">🔴 Lean Business Model Canvas is marked as a "guaranteed question" — read thoroughly. Also know the 5 stages of growth, 5 Lean principles, 8 wastes, and Lean tools.</div>
 
         <div class="s-divider"><div class="s-divider-line"></div><div class="s-divider-text">5 Stages of Business Growth</div><div class="s-divider-line"></div></div>
         <div class="chip-grid">
@@ -1705,16 +1958,25 @@
 
       <div class="topic-card">
         <h3>Likely 10-Mark Questions <span class="tag tag-c">Part C</span></h3>
+        <div class="priority-banner">Items marked 🔴 are red-highlighted in the important topics PDF. Items marked ★ are described as "guaranteed" or "asked every time."</div>
         <ul class="note-list">
-          <li><strong>Explain all types of Business Models with examples</strong> — Cover all 11 types. Use Indian examples (DMart for No Frills, JioFiber for Bundling, Swiggy for MSP, Amul for Social Enterprise).</li>
-          <li><strong>Contents of a Business Plan</strong> — All 7 sections with detail. Note that Executive Summary is written last but read first.</li>
-          <li><strong>Marketing Plan and its 10 components</strong> — Include 7Ps of marketing mix. Use the Mamaearth or Zepto example for market segmentation.</li>
-          <li><strong>Financial Plan</strong> — Operating vs Capital budget, 4 financial statements, BEP formula with example calculation, ratio types, cost elements (prime cost vs overheads).</li>
-          <li><strong>Forms of Business Organisation</strong> — All 5 types with advantages, disadvantages, and examples. Key distinction: unlimited vs limited liability.</li>
-          <li><strong>Financing Options for New Ventures</strong> — Angel, VC, PE with full comparison table. Include Indian examples (Ratan Tata as angel, Sequoia India as VC, KKR/Blackstone as PE).</li>
-          <li><strong>Growth and Exit Strategies</strong> — Internal/external growth (with Maruti-Suzuki JV, ITC diversification) + 5 exit strategies + 7 reasons to exit.</li>
-          <li><strong>Lean Methodology</strong> — 5 principles, 8 wastes, 5 tools, Indian manufacturing example (Parle / Tata Motors TPS implementation).</li>
-          <li><strong>Role of Entrepreneurs in Economic Development</strong> — All 7 roles with current Indian data (MSME stats, Jio disruption, startup ecosystem numbers).</li>
+          <li><span class="priority-badge">Guaranteed ★</span> <strong>Lean Business Model Canvas</strong> — All 8 components with the Uber example. Read the lean canvas section thoroughly.</li>
+          <li><span class="priority-badge">Asked Every Time ★</span> <strong>Steps to Set Up a Business in India</strong> — All 10 steps in order with key figures (12% PF, 3.25%+0.75% ESI, 20+ / 10+ employee thresholds).</li>
+          <li><span class="priority-badge">Very Important</span> <strong>Exit Strategies</strong> — All 5 strategies + 7 reasons for exiting + 6 steps to prepare for an exit.</li>
+          <li><span class="priority-badge">Very Important</span> <strong>Main Strategies of Growth</strong> — Internal (market penetration, development, product dev, diversification) + External (JV, merger, sub-contracting, franchising).</li>
+          <li><span class="priority-badge">High Priority</span> <strong>Forms of Business Organisation</strong> — All 5 types (Sole Prop, Partnership, Joint Stock, LLC, Cooperative) with adv., disadv., and examples. Unlimited vs Limited liability distinction is key.</li>
+          <li><span class="priority-badge">High Priority</span> <strong>Functions of an Entrepreneur</strong> — 8 functions. Note: characteristics ≠ functions (common exam trap). Often asked as a case study.</li>
+          <li><span class="priority-badge">High Priority</span> <strong>Traits / Characteristics of an Entrepreneur</strong> — All 10+ traits with brief explanations.</li>
+          <li><span class="priority-badge">High Priority</span> <strong>Financial Statements (4 types)</strong> — Meaning of each: Balance Sheet, Income Statement, Statement of Retained Earnings, Cash Flow Statement. Know the Balance Sheet equation.</li>
+          <li><span class="priority-badge">High Priority</span> <strong>Elements of Cost</strong> — Direct vs Indirect for Material, Labour, and Expenses. Prime Cost = sum of all direct costs. Overheads = sum of all indirect costs.</li>
+          <li><span class="priority-badge">High Priority</span> <strong>IP Rights</strong> — Meaning + examples for Trademark, Copyright, Patent, GI Tag, Industrial Design. Filing process not high priority.</li>
+          <li><span class="priority-badge">High Priority</span> <strong>Marketing Mix — 7 Ps + Market Survey Techniques</strong> — Know all 7 Ps and all 6 survey techniques with definitions.</li>
+          <li><strong>Business Idea vs Business Opportunity</strong> — Table comparison + "A good idea is not necessarily a good opportunity. Justify."</li>
+          <li><strong>Importance of Business Plan for Multiple Stakeholders</strong> — Cover: entrepreneur, investor, bank, potential buyer, internal stakeholders.</li>
+          <li><strong>Components of Business Plan</strong> — All 7 sections. Executive Summary = written last, read first.</li>
+          <li><strong>Financing New Ventures (VC / Angel / PE)</strong> — Full comparison table. Angel = own money, seed stage. VC = others' money, equity. PE = mature companies, 100% buyout.</li>
+          <li><strong>Government Startup Schemes</strong> — Startup India, FFS, AIM, PMMY, CGTMSE. Know launch year, nodal ministry, and key features of each.</li>
+          <li><strong>Breakeven Point</strong> — Practice problems. Formula: BEP = Fixed Costs ÷ (Selling Price − Variable Cost). Know how to solve a numerical.</li>
         </ul>
         <div class="tip-box tip-warn">
           <span class="tip-icon">⚠️</span>
